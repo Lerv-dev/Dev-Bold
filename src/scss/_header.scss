@@ -1,0 +1,114 @@
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	overflow:hidden; /* Eliminamos errores de float */
+    background: linear-gradient(to right,#111e6c 60%,#ef434e 100%);  
+    .logo{
+        color:#f2f2f2;
+        font-size:50px;
+        padding-left: 30px;
+        line-height:80px;
+        float:left;
+        img{
+            width: 80px;
+        }
+    }
+
+    nav {
+        line-height:80px; 
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        a{
+            color:#fff;
+            text-decoration:none;
+            font-size: small;
+            &:hover{
+                font-weight:bold;
+            }
+        }
+    }
+    .wrapper {
+        width:100%; 
+        overflow:hidden; 
+    }
+    .navigation-menu {
+        margin-left: auto;
+    }
+    
+    .navigation-menu ul {
+        display: flex;
+        padding: 0;
+        padding-right: 30px;
+    }
+    
+    .navigation-menu li {
+        list-style-type: none;
+        margin: 0 1rem;
+    }
+    
+    .navigation-menu li a {
+        text-decoration: none;
+        display: block;
+        width: 100%;
+    }
+    
+    .hamburger {
+        border: 0;
+        height: 40px;
+        width: 40px;
+        padding: 0.5rem;
+        border-radius: 50%;
+        background-color: unset;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        .hamburger {
+            display: block;
+        }
+        
+        .navigation-menu ul {
+            flex-direction: column;
+            position: fixed;
+            z-index: 100;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-color: white;
+            border-top: 1px solid black;
+            display: none;
+        }
+        
+        .navigation-menu li {
+            text-align: center;
+            margin: 0;
+        }
+        
+        .navigation-menu li a {
+            color: black;
+            width: 100%;
+            padding: 1.5rem 0;
+        }
+        
+        .navigation-menu li:hover {
+            background-color: #eee;
+        }
+        
+        .navigation-menu.expanded ul {
+            display: block;
+        }
+    }
+}
+
