@@ -14,7 +14,7 @@ function Home({data}){
     };
 
     useEffect(()=>{
-        if(data && data.sales.length>0 && colour=="today"){
+        if(data && data.sales.length>0 && colour==="today"){
             setDataTable(data.sales)
         }
     },[data,colour])
